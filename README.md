@@ -17,4 +17,5 @@ Problemas ao abrir a solução podem ser resolvidos executando o Visual Studio c
 
 ## Observações
 
-Esta API pode ser consumida pelo projeto [Curso de Angular JS do Rodrigo Branas](https://github.com/mauroao/Curso-Angular-JS-Rodrigo-Branas)
+Esta API pode ser consumida pelo projeto [mauroao/angular.js](https://github.com/mauroao/angular.js)
+
