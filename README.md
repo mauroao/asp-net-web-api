@@ -1,6 +1,4 @@
-![alt text](https://mauroao.visualstudio.com/0c2a69c1-ac28-4e04-bf07-d5abf465bb20/_apis/build/status/teste1/MyFirstProject-ASP.NET-CI "Build")
-
-# ASP.NET WEB API REST
+# ASP.NET WEB API REST  
 
 ## Introdução
 
