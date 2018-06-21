@@ -7,6 +7,8 @@ namespace asp_net_web_api.Models
 {
     public class Contato
     {
+        açsldkfjaçslkdjfçalksdjfçalksdjfpoiupioupzoijhp  poiu poiu piu poiu 
+        
         public int serial { get; set; }
         public string nome { get; set; }
         public string telefone { get; set; }
