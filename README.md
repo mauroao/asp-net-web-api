@@ -1,5 +1,3 @@
-![Build Status](https://mauroao.visualstudio.com/_apis/public/build/definitions/4c856b74-0b28-4b77-8850-47d39faf8de3/2/badge)
-
 # ASP.NET WEB API REST  
 
 ## Introdução
