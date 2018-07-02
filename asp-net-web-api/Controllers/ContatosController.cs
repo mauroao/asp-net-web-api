@@ -1,31 +1,31 @@
-﻿using asp_net_web_api.Models;
-using asp_net_web_api.Services;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
-using System.Web.Http;
-using System.Web.Http.Cors;
-using System.Web.Http.Results;
-
-namespace asp_net_web_api.Controllers
+﻿namespace AspnetWebApi.Controllers
 {
+    using System.Collections.Generic;
+    using System.Net;
+    using System.Web.Http;
+    using System.Web.Http.Cors;
+    using AspnetWebApi.Interfaces;
+    using AspnetWebApi.Models;
+    using AspnetWebApi.Services;
+
+    /// <summary>
+    /// ContatosController class
+    /// </summary>
     [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class ContatosController : ApiController
     {
-        private ContatosService service = new ContatosService();
+        private IContatosService service = ServicesFactory.GetContatosService();
 
         // GET: api/Contatos
-        public IEnumerable<Contato> Get()
+        public IEnumerable<Contato> Get(int pagenumber, int limit, string findname) 
         {
-            return service.getContatos();
+            return this.service.GetContatos();
         }
 
         // GET: api/Contatos/5
         public Contato Get(int id)
         {
-            var item = service.getContato(id);
+            var item = this.service.GetContato(id);
 
             if (item == null)
             {
@@ -39,16 +39,16 @@ namespace asp_net_web_api.Controllers
         [HttpPost]
         public void Post([FromBody]Contato contato)
         {
-            service.addContato(contato);
+            this.service.AddContato(contato);
         }
 
         // DELETE: api/Contatos/5
         [HttpDelete]
-        public Object Delete(int id)
+        public object Delete(int id)
         {
-            bool deleted = service.removeContato(id);
+            bool deleted = this.service.RemoveContato(id);
             
-            return Json(new { deleted = deleted });
+            return this.Json(new { deleted = deleted });
         }
     }
 }

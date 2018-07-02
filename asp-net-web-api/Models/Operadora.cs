@@ -1,17 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-
-namespace asp_net_web_api.Models
+﻿namespace AspnetWebApi.Models
 {
+    /// <summary>
+    /// Represents an Operadora
+    /// </summary>
     public class Operadora
     {
-        public string nome { get; set; }
-        public int codigo { get; set; }
-        public string categoria { get; set; }
-        public double preco { get; set; }
-        public Operadora() { }
         public Operadora(string nome, int codigo, string categoria, double preco)
         {
             this.nome = nome;
@@ -19,5 +12,29 @@ namespace asp_net_web_api.Models
             this.categoria = categoria;
             this.preco = preco;
         }
+
+        public Operadora()
+        {
+        }
+
+        /// <summary>
+        /// Gets or sets Nome da Operadora
+        /// </summary>
+        public string nome { get; set; }
+
+        /// <summary>
+        /// Gets or sets Codigo da Operadora
+        /// </summary>
+        public int codigo { get; set; }
+
+        /// <summary>
+        /// Gets or sets  Categoria da Operadora
+        /// </summary>
+        public string categoria { get; set; }
+
+        /// <summary>
+        /// Gets or sets  Preço do Minuto
+        /// </summary>
+        public double preco { get; set; }
     }
 }

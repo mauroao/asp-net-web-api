@@ -1,10 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web.Http;
-
-namespace asp_net_web_api
+﻿namespace AspnetWebApi
 {
+    using System.Web.Http;
+
+    /// <summary>
+    /// WebApiConfig class
+    /// </summary>
     public static class WebApiConfig
     {
         public static void Register(HttpConfiguration config)
@@ -18,8 +18,7 @@ namespace asp_net_web_api
             config.Routes.MapHttpRoute(
                 name: "DefaultApi",
                 routeTemplate: "api/{controller}/{id}",
-                defaults: new { id = RouteParameter.Optional }
-            );
+                defaults: new { id = RouteParameter.Optional });
         }
     }
 }

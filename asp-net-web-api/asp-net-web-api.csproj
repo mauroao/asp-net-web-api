@@ -25,6 +25,7 @@
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
     <TargetFrameworkProfile />
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -51,6 +52,9 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="StyleCop, Version=5.0.0.0, Culture=neutral, PublicKeyToken=f904653c63bc2738, processorArchitecture=MSIL">
+      <HintPath>..\packages\StyleCop.5.0.0\lib\net40\StyleCop.dll</HintPath>
+    </Reference>
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Web.Cors, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
@@ -98,15 +102,18 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\ContatosController.cs" />
     <Compile Include="Controllers\OperadorasController.cs" />
-    <Compile Include="DataBase\Database.cs" />
+    <Compile Include="DataBase\MockDatabase.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Interfaces\IContatosService.cs" />
+    <Compile Include="Interfaces\IOperadorasService.cs" />
     <Compile Include="Models\Contato.cs" />
     <Compile Include="Models\Operadora.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Services\ContatosService.cs" />
-    <Compile Include="Services\OperadorasService.cs" />
+    <Compile Include="Services\ContatosMockService.cs" />
+    <Compile Include="Services\OperadorasMockService.cs" />
+    <Compile Include="Services\ServicesFactory.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
