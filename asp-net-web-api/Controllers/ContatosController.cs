@@ -14,15 +14,28 @@
     [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class ContatosController : ApiController
     {
+        /// <summary>
+        /// Service Provider
+        /// </summary>
         private IContatosService service = ServicesFactory.GetContatosService();
 
-        // GET: api/Contatos
+        /// <summary>
+        /// GET: api/Contatos
+        /// </summary>
+        /// <param name="pagenumber">Number of page</param>
+        /// <param name="limit">Rows per page</param>
+        /// <param name="findname">Query search name</param>
+        /// <returns>Returns a Contato list</returns>
         public IEnumerable<Contato> Get(int pagenumber, int limit, string findname) 
         {
             return this.service.GetContatos();
         }
 
-        // GET: api/Contatos/5
+        /// <summary>
+        /// GET: api/Contatos/5
+        /// </summary>
+        /// <param name="id">Id number</param>
+        /// <returns>Returns a Contato</returns>
         public Contato Get(int id)
         {
             var item = this.service.GetContato(id);
@@ -34,15 +47,22 @@
             
              return item; 
         }
-
-        // POST: api/Contatos
+        
+        /// <summary>
+        /// POST: api/Contatos
+        /// </summary>
+        /// <param name="contato">Contato object to be sabed</param>
         [HttpPost]
         public void Post([FromBody]Contato contato)
         {
             this.service.AddContato(contato);
         }
 
-        // DELETE: api/Contatos/5
+        /// <summary>
+        /// DELETE: api/Contatos/5
+        /// </summary>
+        /// <param name="id">ID of Contato to be deleted</param>
+        /// <returns>Returns information about sucessful deletion</returns>
         [HttpDelete]
         public object Delete(int id)
         {

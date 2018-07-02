@@ -9,31 +9,31 @@
     /// </summary>
     public static class ServicesFactory
     {
-        private static IContatosService iContatosService;
-        private static IOperadorasService iOperadorasService;
+        private static IContatosService contatosService;
+        private static IOperadorasService operadorasService;
         private static string contatosServiceClassNameParam = "ContatosServiceClassName";
         private static string operadorasServiceClassNameParam = "OperadorasServiceClassName";
 
         public static IContatosService GetContatosService()
         {
-            if (iContatosService == null)
+            if (contatosService == null)
             {
                 string className = WebConfigurationManager.AppSettings[contatosServiceClassNameParam];
-                iContatosService = (IContatosService)Activator.CreateInstance(Type.GetType(className));
+                contatosService = (IContatosService)Activator.CreateInstance(Type.GetType(className));
             }
 
-            return iContatosService;
+            return contatosService;
         }
 
         public static IOperadorasService GetOperadorasService()
         {
-            if (iOperadorasService == null)
+            if (operadorasService == null)
             {
                 var className = WebConfigurationManager.AppSettings[operadorasServiceClassNameParam];
-                iOperadorasService = (IOperadorasService)Activator.CreateInstance(Type.GetType(className));
+                operadorasService = (IOperadorasService)Activator.CreateInstance(Type.GetType(className));
             }
 
-            return iOperadorasService;
+            return operadorasService;
         }
     }
 }

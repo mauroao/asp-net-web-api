@@ -18,7 +18,7 @@
 
         public Operadora GetOperadora(int codigo)
         {
-            return this.GetOperadoras().FirstOrDefault(n => n.codigo == codigo);
+            return this.GetOperadoras().FirstOrDefault(n => n.Codigo == codigo);
         }
     }
 }

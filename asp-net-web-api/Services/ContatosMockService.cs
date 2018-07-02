@@ -18,7 +18,7 @@
 
         public Contato GetContato(int serial)
         {
-            return this.GetContatos().FirstOrDefault(n => n.serial == serial);
+            return this.GetContatos().FirstOrDefault(n => n.Serial == serial);
         }
 
         public void AddContato(Contato contato)

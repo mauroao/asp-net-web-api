@@ -1,10 +1,12 @@
 ﻿namespace AspnetWebApi.Models
 {
     using System;
+    using System.Runtime.Serialization;
 
     /// <summary>
     /// Represents Contato
     /// </summary>
+    [DataContract]
     public class Contato
     {
         /// <summary>
@@ -24,36 +26,41 @@
         /// <param name="operadora">Operadora do Contato</param>
         public Contato(int serial, string nome, string telefone, DateTime data, Operadora operadora)
         {
-            this.serial = serial;
-            this.nome = nome;
-            this.telefone = telefone;
-            this.data = data;
-            this.operadora = operadora;
+            this.Serial = serial;
+            this.Nome = nome;
+            this.Telefone = telefone;
+            this.Data = data;
+            this.Operadora = operadora;
         }
-        
+
         /// <summary>
         /// Gets or sets Serial number
         /// </summary>
-        public int serial { get; set; }
+        [DataMember(Name = "serial")]
+        public int Serial { get; set; }
 
         /// <summary>
         /// Gets or sets Nome do Contato
         /// </summary>
-        public string nome { get; set; }
+        [DataMember(Name = "nome")]
+        public string Nome { get; set; }
 
         /// <summary>
         /// Gets or sets Telefone do Contato
         /// </summary>
-        public string telefone { get; set; }
+        [DataMember(Name = "telefone")]
+        public string Telefone { get; set; }
 
         /// <summary>
         /// Gets or sets Data de Cadastro
         /// </summary>
-        public DateTime data { get; set; }
+        [DataMember(Name = "data")]
+        public DateTime Data { get; set; }
 
         /// <summary>
         /// Gets or sets Operadora do Contato
         /// </summary>
-        public Operadora operadora { get; set; }
+        [DataMember(Name = "operadora")]
+        public Operadora Operadora { get; set; }
     }
 }

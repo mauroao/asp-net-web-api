@@ -13,15 +13,25 @@
     [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class OperadorasController : ApiController
     {
+        /// <summary>
+        /// Service provider
+        /// </summary>
         private IOperadorasService service = ServicesFactory.GetOperadorasService();
 
-        // GET: api/Operadoras
+        /// <summary>
+        /// GET: api/Operadoras
+        /// </summary>
+        /// <returns>Returns a list of Operadoras</returns>
         public IEnumerable<Operadora> Get()
         {
             return this.service.GetOperadoras();
         }
 
-        // GET: api/Operadoras/5
+        /// <summary>
+        /// GET: api/Operadoras/5
+        /// </summary>
+        /// <param name="id">Operadora ID</param>
+        /// <returns>Returns an Operadora</returns>
         public Operadora Get(int id)
         {
             return this.service.GetOperadora(id);
