@@ -1,26 +1,37 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+using System.Runtime.Serialization;
 
-namespace asp_net_web_api.Models
+namespace AspnetWebApi.Models
 {
+    [DataContract]
     public class Contato
     {
-        public int serial { get; set; }
-        public string nome { get; set; }
-        public string telefone { get; set; }
-        public DateTime data { get; set; }
-        public Operadora operadora { get; set; }
-        public Contato() { }
-        public Contato(int serial, string nome, string telefone, DateTime data, Operadora operadora)
+        public Contato()
         {
-            this.serial = serial;
-            this.nome = nome;
-            this.telefone = telefone;
-            this.data = data;
-            this.operadora = operadora;
         }
 
+        public Contato(int serial, string nome, string telefone, DateTime data, Operadora operadora)
+        {
+            this.Serial = serial;
+            this.Nome = nome;
+            this.Telefone = telefone;
+            this.Data = data;
+            this.Operadora = operadora;
+        }
+
+        [DataMember(Name = "serial")]
+        public int Serial { get; set; }
+
+        [DataMember(Name = "nome")]
+        public string Nome { get; set; }
+
+        [DataMember(Name = "telefone")]
+        public string Telefone { get; set; }
+
+        [DataMember(Name = "data")]
+        public DateTime Data { get; set; }
+
+        [DataMember(Name = "operadora")]
+        public Operadora Operadora { get; set; }
     }
 }

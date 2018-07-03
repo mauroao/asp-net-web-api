@@ -1,3 +1,8 @@
+asp-net-web-api/.vs/asp-net-web-api/v15/Server/sqlite3/
 asp-net-web-api/bin/
 asp-net-web-api/obj/
 packages/
+/.vs/asp-net-web-api/v15/Server/sqlite3/storage.ide-wal
+/.vs/asp-net-web-api/v15/Server/sqlite3/storage.ide-shm
+/.vs/asp-net-web-api/v15/Server/sqlite3/storage.ide
+/.vs/asp-net-web-api/v15/Server/sqlite3/db.lock

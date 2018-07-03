@@ -1,23 +1,32 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using System.Runtime.Serialization;
 
-namespace asp_net_web_api.Models
+namespace AspnetWebApi.Models
 {
+    [DataContract]
     public class Operadora
     {
-        public string nome { get; set; }
-        public int codigo { get; set; }
-        public string categoria { get; set; }
-        public double preco { get; set; }
-        public Operadora() { }
         public Operadora(string nome, int codigo, string categoria, double preco)
         {
-            this.nome = nome;
-            this.codigo = codigo;
-            this.categoria = categoria;
-            this.preco = preco;
+            this.Nome = nome;
+            this.Codigo = codigo;
+            this.Categoria = categoria;
+            this.Preco = preco;
         }
+
+        public Operadora()
+        {
+        }
+
+        [DataMember(Name = "nome")]
+        public string Nome { get; set; }
+
+        [DataMember(Name = "codigo")]
+        public int Codigo { get; set; }
+
+        [DataMember(Name = "categoria")]
+        public string Categoria { get; set; }
+
+        [DataMember(Name = "preco")]
+        public double Preco { get; set; }
     }
 }
