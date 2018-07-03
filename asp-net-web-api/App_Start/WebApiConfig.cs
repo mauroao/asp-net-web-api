@@ -1,10 +1,7 @@
-﻿namespace AspnetWebApi
-{
-    using System.Web.Http;
+using System.Web.Http;
 
-    /// <summary>
-    /// WebApiConfig class
-    /// </summary>
+namespace AspnetWebApi
+{
     public static class WebApiConfig
     {
         public static void Register(HttpConfiguration config)
