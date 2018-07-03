@@ -39,7 +39,13 @@ namespace AspnetWebApi.DataBase
                     new Contato(891234, "Maria", "9999-8866", DateTime.Today, listaOperadoras[2]),
                     new Contato(923450, "Antonio .NET", "9999-2888", DateTime.Today, listaOperadoras[3]),
                     new Contato(934560, "Anada Microsoft", "9999-8872", DateTime.Today, listaOperadoras[0]),
-                    new Contato(991230, "Rubens C#", "9999-8826", DateTime.Today, listaOperadoras[0])
+                    new Contato(991230, "Rubens C#", "9999-8826", DateTime.Today, listaOperadoras[0]),
+                    new Contato(553456, "Pedro 2", "9999-8888", DateTime.Today, listaOperadoras[0]),
+                    new Contato(554567, "Ana 2", "9999-8877", DateTime.Today, listaOperadoras[1]),
+                    new Contato(551234, "Maria 2", "9999-8866", DateTime.Today, listaOperadoras[2]),
+                    new Contato(553450, "Antonio 2 .NET", "9999-2888", DateTime.Today, listaOperadoras[3]),
+                    new Contato(554560, "Anada Microsoft 2", "9999-8872", DateTime.Today, listaOperadoras[0]),
+                    new Contato(551230, "Rubens C# 2", "9999-8826", DateTime.Today, listaOperadoras[0])
                 };
             }
 

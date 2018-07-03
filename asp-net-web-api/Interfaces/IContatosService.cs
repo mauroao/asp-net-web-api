@@ -5,7 +5,7 @@ namespace AspnetWebApi.Interfaces
 {
     public interface IContatosService
     {
-        IList<Contato> GetContatos(int pagenumber = 0, int limit = 0, string findname = "");
+        PaginatedContatos GetContatos(int pagenumber = 0, int limit = 0, string findname = "");
 
         Contato GetContato(int serial);
 

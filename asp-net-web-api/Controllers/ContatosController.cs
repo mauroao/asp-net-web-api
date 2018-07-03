@@ -13,9 +13,9 @@ namespace AspnetWebApi.Controllers
     {
         private IContatosService service = ServicesFactory.GetContatosService();
 
-        public IEnumerable<Contato> Get(int pagenumber, int limit, string findname) 
+        public object Get(int pagenumber = 0, int limit = 0, string findname = "") 
         {
-            return this.service.GetContatos();
+            return this.Json(this.service.GetContatos(pagenumber, limit, findname));
         }
 
         public Contato Get(int id)
