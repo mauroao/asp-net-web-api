@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Web.Configuration;
+using System.Configuration;
 using AspnetWebApi.Interfaces;
 
 namespace AspnetWebApi.Services
@@ -14,8 +14,8 @@ namespace AspnetWebApi.Services
         public static IContatosService GetContatosService()
         {
             if (contatosService == null)
-            {
-                string className = WebConfigurationManager.AppSettings[contatosServiceClassNameParam];
+            {                
+                string className = ConfigurationManager.AppSettings[contatosServiceClassNameParam];
                 contatosService = (IContatosService)Activator.CreateInstance(Type.GetType(className));
             }
 
@@ -26,7 +26,7 @@ namespace AspnetWebApi.Services
         {
             if (operadorasService == null)
             {
-                var className = WebConfigurationManager.AppSettings[operadorasServiceClassNameParam];
+                var className = ConfigurationManager.AppSettings[operadorasServiceClassNameParam];
                 operadorasService = (IOperadorasService)Activator.CreateInstance(Type.GetType(className));
             }
 
