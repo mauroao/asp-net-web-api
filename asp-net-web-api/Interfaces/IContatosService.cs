@@ -1,8 +1,8 @@
-﻿namespace AspnetWebApi.Interfaces
-{
-    using System.Collections.Generic;
-    using AspnetWebApi.Models;
+﻿using System.Collections.Generic;
+using AspnetWebApi.Models;
 
+namespace AspnetWebApi.Interfaces
+{
     public interface IContatosService
     {
         IList<Contato> GetContatos(int pagenumber = 0, int limit = 0, string findname = "");

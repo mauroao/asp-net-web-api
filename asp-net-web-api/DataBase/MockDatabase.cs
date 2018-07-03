@@ -1,16 +1,15 @@
-﻿namespace AspnetWebApi.DataBase
-{
-    using System;
-    using System.Collections.Generic;
-    using AspnetWebApi.Models;
+﻿using System;
+using System.Collections.Generic;
+using AspnetWebApi.Models;
 
-    /// <summary>
-    /// MockDatabase Class
-    /// </summary>
+namespace AspnetWebApi.DataBase
+{
     public class MockDatabase
     {
         private static MockDatabase instance = null;
+
         private List<Contato> contatos = null;
+
         private List<Operadora> operadoras = null;
 
         private MockDatabase()
@@ -46,7 +45,7 @@
 
             return this.contatos;
         }
-
+        
         public List<Operadora> GetOperadoras()
         {
             if (this.operadoras == null)

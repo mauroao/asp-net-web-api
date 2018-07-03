@@ -1,14 +1,11 @@
-﻿namespace AspnetWebApi.Services
-{
-    using System.Collections.Generic;
-    using System.Linq;
-    using AspnetWebApi.DataBase;
-    using AspnetWebApi.Interfaces;
-    using AspnetWebApi.Models;
+﻿using System.Collections.Generic;
+using System.Linq;
+using AspnetWebApi.DataBase;
+using AspnetWebApi.Interfaces;
+using AspnetWebApi.Models;
 
-    /// <summary>
-    /// OperadorasMockService class
-    /// </summary>
+namespace AspnetWebApi.Services
+{
     public class OperadorasMockService : IOperadorasService
     {
         public IList<Operadora> GetOperadoras()

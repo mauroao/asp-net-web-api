@@ -1,10 +1,7 @@
-﻿namespace AspnetWebApi.Models
-{
-    using System.Runtime.Serialization;
+﻿using System.Runtime.Serialization;
 
-    /// <summary>
-    /// Represents an Operadora
-    /// </summary>
+namespace AspnetWebApi.Models
+{
     [DataContract]
     public class Operadora
     {
@@ -20,27 +17,15 @@
         {
         }
 
-        /// <summary>
-        /// Gets or sets Nome da Operadora
-        /// </summary>
         [DataMember(Name = "nome")]
         public string Nome { get; set; }
 
-        /// <summary>
-        /// Gets or sets Codigo da Operadora
-        /// </summary>
         [DataMember(Name = "codigo")]
         public int Codigo { get; set; }
 
-        /// <summary>
-        /// Gets or sets  Categoria da Operadora
-        /// </summary>
         [DataMember(Name = "categoria")]
         public string Categoria { get; set; }
 
-        /// <summary>
-        /// Gets or sets  Preço do Minuto
-        /// </summary>
         [DataMember(Name = "preco")]
         public double Preco { get; set; }
     }

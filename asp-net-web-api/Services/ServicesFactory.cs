@@ -1,12 +1,9 @@
-﻿namespace AspnetWebApi.Services
-{
-    using System;
-    using System.Web.Configuration;
-    using AspnetWebApi.Interfaces;
+﻿using System;
+using System.Web.Configuration;
+using AspnetWebApi.Interfaces;
 
-    /// <summary>
-    /// ServicesFactory class
-    /// </summary>
+namespace AspnetWebApi.Services
+{
     public static class ServicesFactory
     {
         private static IContatosService contatosService;

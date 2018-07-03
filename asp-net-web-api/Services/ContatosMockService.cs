@@ -1,14 +1,11 @@
-﻿namespace AspnetWebApi.Services
-{
-    using System.Collections.Generic;
-    using System.Linq;
-    using AspnetWebApi.DataBase;
-    using AspnetWebApi.Interfaces;
-    using AspnetWebApi.Models;
+﻿using System.Collections.Generic;
+using System.Linq;
+using AspnetWebApi.DataBase;
+using AspnetWebApi.Interfaces;
+using AspnetWebApi.Models;
 
-    /// <summary>
-    /// ContatosMockService class
-    /// </summary>
+namespace AspnetWebApi.Services
+{
     public class ContatosMockService : IContatosService
     {
         public IList<Contato> GetContatos(int pagenumber = 0, int limit = 0, string findname = "")
