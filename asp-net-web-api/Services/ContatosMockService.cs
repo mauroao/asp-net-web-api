@@ -18,15 +18,18 @@ namespace AspnetWebApi.Services
 
             if (pagenumber > 0 && limit > 0)
             {
-                var skipNumber = (pagenumber - 1) * limit;
-
                 var paginatedData = MockDatabase
                     .GetInstance()
                     .GetContatos();
 
-                paginatedContatos.PaginatedData = 
+                if (!string.IsNullOrEmpty(findname))
+                {
+                    paginatedData = paginatedData.Where(contato => contato.Nome.Contains(findname)).ToList();
+                }
+                
+                paginatedContatos.PaginatedData = paginatedData
                     .OrderBy(contato => contato.Nome)
-                    .Skip(skipNumber)
+                    .Skip((pagenumber - 1) * limit)
                     .Take(limit)
                     .ToList();
                 paginatedContatos.TotalPages = (int)Math.Ceiling((double)paginatedContatos.TotalCount / (double)limit);
