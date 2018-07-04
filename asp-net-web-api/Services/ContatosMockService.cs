@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using AspnetWebApi.DataBase;
 using AspnetWebApi.Interfaces;
@@ -11,38 +10,39 @@ namespace AspnetWebApi.Services
     {
         public PaginatedContatos GetContatos(int pagenumber = 0, int limit = 0, string findname = "")
         {
-            var paginatedContatos = new PaginatedContatos()
+            if (pagenumber == 0 || limit == 0)
             {
-                TotalCount = MockDatabase.GetInstance().GetContatos().Count
-            };
-
-            if (pagenumber > 0 && limit > 0)
-            {
-                var paginatedData = MockDatabase
-                    .GetInstance()
-                    .GetContatos();
-
-                if (!string.IsNullOrEmpty(findname))
+                return new PaginatedContatos()
                 {
-                    paginatedData = paginatedData.Where(contato => contato.Nome.Contains(findname)).ToList();
-                }
-                
-                paginatedContatos.PaginatedData = paginatedData
-                    .OrderBy(contato => contato.Nome)
-                    .Skip((pagenumber - 1) * limit)
-                    .Take(limit)
-                    .ToList();
-                paginatedContatos.TotalPages = (int)Math.Ceiling((double)paginatedContatos.TotalCount / (double)limit);
-                paginatedContatos.PageNumber = pagenumber;
+                    TotalCount = MockDatabase.GetInstance().GetContatos().Count,
+                    PaginatedData = MockDatabase.GetInstance().GetContatos(),
+                    PageNumber = 1,
+                    TotalPages = 1
+                };
             }
-            else
+            
+            var paginatedData = MockDatabase
+                .GetInstance()
+                .GetContatos();
+
+            if (!string.IsNullOrEmpty(findname))
             {
-                paginatedContatos.PaginatedData = MockDatabase.GetInstance().GetContatos();
-                paginatedContatos.PageNumber = 1;
-                paginatedContatos.TotalPages = 1;
+                paginatedData = paginatedData.Where(contato => contato.Nome.Contains(findname)).ToList();
             }
 
-            return paginatedContatos;
+            paginatedData = paginatedData
+                .OrderBy(contato => contato.Nome)
+                .Skip((pagenumber - 1) * limit)
+                .Take(limit)
+                .ToList();
+
+            return new PaginatedContatos()
+            {
+                TotalCount = MockDatabase.GetInstance().GetContatos().Count,
+                PaginatedData = paginatedData,
+                PageNumber = pagenumber,
+                TotalPages = (int)Math.Ceiling((double)MockDatabase.GetInstance().GetContatos().Count / (double)limit)
+            };         
         }
 
         public Contato GetContato(int serial)
