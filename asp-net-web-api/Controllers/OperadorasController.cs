@@ -1,8 +1,6 @@
-﻿using System.Collections.Generic;
-using System.Web.Http;
+﻿using System.Web.Http;
 using System.Web.Http.Cors;
 using AspnetWebApi.Interfaces;
-using AspnetWebApi.Models;
 using AspnetWebApi.Services;
 
 namespace AspnetWebApi.Controllers
@@ -12,14 +10,14 @@ namespace AspnetWebApi.Controllers
     {
         private IOperadorasService service = ServicesFactory.GetOperadorasService();
 
-        public IEnumerable<Operadora> Get()
+        public object Get()
         {
-            return this.service.GetOperadoras();
+            return this.Json(this.service.GetOperadoras());
         }
 
-        public Operadora Get(int id)
+        public object Get(int id)
         {
-            return this.service.GetOperadora(id);
+            return this.Json(this.service.GetOperadora(id));
         }
     }
 }
