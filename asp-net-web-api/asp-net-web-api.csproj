@@ -112,6 +112,7 @@
     <Compile Include="Interfaces\IOperadorasService.cs" />
     <Compile Include="Models\Contato.cs" />
     <Compile Include="Models\Operadora.cs" />
+    <Compile Include="Models\PaginatedContatos.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\ContatosMockService.cs" />
     <Compile Include="Services\OperadorasMockService.cs" />
