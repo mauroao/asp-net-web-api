@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Net;
+﻿using System.Net;
 using System.Web.Http;
 using System.Web.Http.Cors;
 using AspnetWebApi.Interfaces;
@@ -18,7 +17,7 @@ namespace AspnetWebApi.Controllers
             return this.Json(this.service.GetContatos(pagenumber, limit, findname));
         }
 
-        public Contato Get(int id)
+        public object Get(int id)
         {
             var item = this.service.GetContato(id);
 
@@ -27,7 +26,7 @@ namespace AspnetWebApi.Controllers
                 throw new HttpResponseException(HttpStatusCode.NotFound);
             }
             
-             return item; 
+            return this.Json(item); 
         }
         
         [HttpPost]
